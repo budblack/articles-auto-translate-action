@@ -26,10 +26,10 @@ export class main_options {
 
 function gen_issue_comment(meta, path, repo, ref, raw_file, translated_file) {
   return `
-- Original URL: [${meta.title}](${path})
+- Original URL: [${meta.title}](${meta.originalURL})
 - Original author: [${meta.author || 'anonymous'}](${meta.authorURL})
 - Markdown file: [click to view](https://github.com/${repo.owner}/${repo.repo}/blob/${join(ref.replace(/^refs\/heads\//, ''), raw_file)})
-- Translated file: [click to edit](https://github.com/${repo.owner}/${repo.repo}/edit/${join(ref.replace(/^refs\/heads\//, ''), translated_file)}),
+- Translated file: [click to edit](https://github.com/${repo.owner}/${repo.repo}/edit/${join(ref.replace(/^refs\/heads\//, ''), translated_file)})
 `;
 
 }
